@@ -1,0 +1,32 @@
+<div class="container" *ngIf="!isSubmitted">
+  <div style="  margin-left: 15px;" >
+    <div class="div-img">
+      <img src="assets\images\icon-star.svg" />
+    </div>
+    <h2 class="question">How did we do ?</h2>
+    <div class="text-asking">Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</div>
+    <div class="div-button">
+      <button class="button" [ngClass]="{'active': isDone && chosenNumber===1}" (click)="onClickNumber(1)">1</button>
+      <button  class="button" [ngClass]="{'active': isDone && chosenNumber===2}" (click)="onClickNumber(2)">2</button>
+      <button  class="button" [ngClass]="{'active': isDone && chosenNumber===3}" (click)="onClickNumber(3)">3</button>
+      <button  class="button" [ngClass]="{'active': isDone && chosenNumber===4}" (click)="onClickNumber(4)">4</button>
+      <button  class="button" [ngClass]="{'active': isDone && chosenNumber===5}" (click)="onClickNumber(5)">5</button>
+    </div>
+    <div>
+      <button class="submit" (click)="onSubmit()">
+        <span style="color: white;"> SUBMIT</span>
+       </button>
+    </div>
+  </div>
+</div>
+<div class="container" *ngIf="isSubmitted">
+  <div class="under-container">
+    <img class="img2" src="assets\images\illustration-thank-you.svg" />
+    <div class="text-selected">You selected out {{chosenNumber}} of 5 </div>
+    <div class="text-thank">Thank you!</div>
+    <div class="text-final">
+      We appreciate you taking the time to give a rating.<br>
+      If you ever need more support, don’t hesitate to get in touch!
+    </div>
+  </div>
+</div>
